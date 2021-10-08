@@ -1,12 +1,12 @@
-const httpFunctions = require('./index');
-const context = require('../testing/Context');
+const functions = require("./index");
+const context = require("../testing/Context");
 
-test('Http trigger example', async () => {
+test("Http trigger", async () => {
   const request = {
-    query: { name: 'schuc' },
+    query: { name: "Alfredo adrian" },
   };
-  await httpFunctions(context, request);
-  expect(context.res.body).toContain('axample');
-  expect(context.res.body).toEqual('Welcome, schuc example');
+
+  await functions(context, request);
+  expect(context.res.body).toEqual("Welcome, Alfredo adrian");
   expect(context.log.mock.calls.length).toBe(1);
 });
